@@ -14,7 +14,7 @@ function Table({
         {...props} />
     </div>
   );
-}
+};
 
 function TableHeader({
   className,

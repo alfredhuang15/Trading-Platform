@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ReactApexChart from 'react-apexcharts';
 import { Button } from '../../components/ui/button';
 
@@ -62,7 +62,7 @@ const StockChart = () => {
         fill:{
             type:"gradient",
             gradient:{
-                shadeIntesnity:1,
+                shadeIntensity: 1,
                 opacityFrom:0.7,
                 opacityTo:0.9,
                 stops:[0,100]

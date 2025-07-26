@@ -1,21 +1,20 @@
-import React from 'react'
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '../../components/ui/table'
-import { Avatar } from '@radix-ui/react-avatar'
-import { AvatarImage } from '../../components/ui/avatar'
 
-const AssetTable = () => {
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '../../components/ui/table'
+import { Avatar, AvatarImage } from '../../components/ui/avatar'
+
+const Portfolio = () => {
   return (
-  <Table>
+    <div className='p-5 lg:px-20'>
+        <h1 className='font-bold text-3xl pb-5'>Portfolio</h1>
+        <Table>
   <TableHeader>
     <TableRow>
-      <TableHead className="w-[100px]">
-        Coin
-      </TableHead>
-      <TableHead>SYMBOL</TableHead>
-      <TableHead>VOLUME</TableHead>
-      <TableHead>MARKET CAP</TableHead>
-      <TableHead>24h</TableHead>
-      <TableHead className="text-right">PRICE</TableHead>
+      <TableHead className="">Asset</TableHead>
+      <TableHead>Price</TableHead>
+      <TableHead>Unit</TableHead>
+      <TableHead>Change</TableHead>
+      <TableHead>Change%</TableHead>
+      <TableHead className="text-right">VOLUME</TableHead>
     </TableRow>
   </TableHeader>
   <TableBody>
@@ -29,13 +28,13 @@ const AssetTable = () => {
       <TableCell>BTC</TableCell>
       <TableCell>9124463121</TableCell>
       <TableCell>1364881428323</TableCell>
-      <TableCell>0.20009</TableCell>
+      <TableCell>-0.20009</TableCell>
       <TableCell className="text-right">$69249</TableCell>
     </TableRow> )}
   </TableBody>
   </Table>
+    </div>
   )
 }
 
-export default AssetTable
-
+export default Portfolio
