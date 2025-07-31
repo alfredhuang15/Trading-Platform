@@ -4,8 +4,10 @@ import { Input } from '../../components/ui/input'
 import { useForm } from 'react-hook-form'
 import { Button } from '../../components/ui/button'
 import { DialogClose } from '../../components/ui/dialog'
+import { useDispatch } from 'react-redux'
 
 const SignupForm = () => {
+    const dispatch = useDispatch()
     const form = useForm({
         resolver:"",
         defaultValues:{
@@ -15,6 +17,7 @@ const SignupForm = () => {
         }
     })
     const onSubmit=(data) => {
+      dispatch(regiser(data))
         console.log(data)
     }
   return (
