@@ -15,10 +15,13 @@ import Watchlist from './page/Watchlist/Watchlist'
 import Profile from './page/Profile/profile'
 import SearchCoin from './page/Search/SearchCoin'
 import Notfound from './page/Notfound/Notfound'
+import Auth from './page/Auth/Auth'
 
 function App() {
   return (
     <ThemeProvider defaultTheme = "dark" storageKey = "vite-ui-theme">
+      <Auth/>
+      {false && <div>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -33,6 +36,7 @@ function App() {
         <Route path="/search" element={<SearchCoin/>} />
         <Route path="/*" element={<Notfound/>} />
       </Routes>
+      </div>}
     </ThemeProvider>  
   )
 }

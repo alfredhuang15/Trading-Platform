@@ -5,6 +5,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import TopupForm from './TopupForm'
 import WithdrawalForm from './WithdrawalForm'
 import TransferForm from './TransferForm'
+import { UpdateIcon } from '@radix-ui/react-icons'
+import { Avatar, AvatarFallback } from '../../components/ui/avatar'
 
 const Wallet = () => {
   return (
@@ -93,10 +95,43 @@ const Wallet = () => {
             </div>
           </CardContent>
         </Card>
+
+        <div className='py-5 pt-10'>
+          <div className='flex gap-2 items-center pb-5'>
+            <h1 className='text-2xl font-semibold'>History</h1>
+            <UpdateIcon className='h-7 w-7 p-0 cursor-pointer hover:text-gray-400'/>
+          </div>
+
+          <div className='space-y-5'>
+
+           {[1,1,1,1,1,1,1,1,1,1,1].map((item,i)=>  <div key={i}>
+              <Card className="px-5 flex justify-between items-center p-2">
+              <div className="flex justify-between items-center w-full">
+                <div className='flex items-center gap-5'>
+                  <Avatar>
+                    <AvatarFallback>
+                      <ShuffleIcon/>
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className='space-y-1'>
+                    <h1>Buy Asset</h1>
+                    <p className='text-sm text-gray-400'>2025-09-05</p>
+                  </div>
+                </div>
+                <div>
+                  <p className='text-green-500'>999 CAN</p>
+                </div>
+                </div>
+              </Card>
+            </div>)}
+
+          </div>
+          
+         
+        </div>
       </div>
-      
     </div>
-  )
-}
+  );
+};
 
 export default Wallet

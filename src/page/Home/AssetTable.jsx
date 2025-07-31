@@ -2,8 +2,10 @@ import React from 'react'
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '../../components/ui/table'
 import { Avatar } from '@radix-ui/react-avatar'
 import { AvatarImage } from '../../components/ui/avatar'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 const AssetTable = () => {
+  const navigate=useNavigate()
   return (
   <Table>
   <TableHeader>
@@ -20,7 +22,7 @@ const AssetTable = () => {
   </TableHeader>
   <TableBody>
     {[1,1,1,1,1,1,1,1,1,1,1].map((item,index)=><TableRow key={index}>
-      <TableCell className="font-medium flex items-center gap-2">
+      <TableCell onClick={()=> navigate(`/market/bitcoin`)} className="font-medium flex items-center gap-2">
         <Avatar className='-z-50'>
           <AvatarImage src="https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400"/>
         </Avatar>
